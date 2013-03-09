@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Elasticsearch for Everything</title>
+	
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/core/deck.core.css">
+	
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<!-- <link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/themes/style/web-2.0.css"> -->
+    <link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/themes/style/web-2.0.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="libraries/imakewebthings-deck.js-e42bd0c/themes/transition/horizontal-slide.css">
+	
+	<!-- Required Modernizr file -->
+	<script src="libraries/imakewebthings-deck.js-e42bd0c/modernizr.custom.js"></script>
+</head>
+<body>
+
+<article class="deck-container">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide" id="intro">
+	<h2>Elasticsearch for Everything</h2>
+    <dl>
+        <dt>Justin T. Arthur</dt>
+        <dd>Senior Software Engineer</dd>
+    </dl>
+</section>
+
+<section class="slide" id="elasticsearch">
+	<h2>What Elasticsearch Is</h2>
+    <ul>
+        <li>Decentralized Cluster of Data and Compute Power</li>
+        <li>A RESTful Create, Read, Update, Delete Datasource</li>
+        <li>Uses Replicas for High Availability of the Data</li>
+        <li>A Java web application and service layer.</li>
+    </ul>
+    <p>A webservice for storing data safely and retrieving data quickly.</p>
+</section>
+
+<section class="slide" id="what-its-made-for">
+	<h2>What It's Made For</h2>
+    Search. Near-realtime querying of indexed data.
+</section>
+
+<section class="slide" id="as_a_db">
+    <h2>But you can also use it as a RESTful database.</h2>
+    <p>Take TodoMVC, a simple browser-side application implemented in any one of a variety of JS MVC frameworks</p>
+    <p>Lists of items are a perfect application for RESTful JSON storage.</p>
+    <p></p>
+</section>
+
+<section class="slide" id="shardloads_of_bs">
+    <h2>I haven't been entirely forthcoming...</h2>
+    <p>Elasticsearch doesn't have authentication or security.</p>
+    <p>The data is not realtime.</p>
+    <p>JavaScript is asynchronous and doesn't support streaming responses.</p>
+</section>
+
+<!-- End slides. -->
+
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="" method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="" title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="libraries/imakewebthings-deck.js-e42bd0c/jquery-1.7.2.min.js"></script>
+<script src="libraries/imakewebthings-deck.js-e42bd0c/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="libraries/imakewebthings-deck.js-e42bd0c/extensions/hash/deck.hash.js"></script>
+<script src="libraries/imakewebthings-deck.js-e42bd0c/extensions/menu/deck.menu.js"></script>
+<script src="libraries/imakewebthings-deck.js-e42bd0c/extensions/goto/deck.goto.js"></script>
+<script src="libraries/imakewebthings-deck.js-e42bd0c/extensions/status/deck.status.js"></script>
+<script src="libraries/imakewebthings-deck.js-e42bd0c/extensions/navigation/deck.navigation.js"></script>
+<script src="libraries/imakewebthings-deck.js-e42bd0c/extensions/scale/deck.scale.js"></script>
+
+<script src="libraries/imakewebthings-deck.js-e42bd0c/themes/launchpad/launchpad.js"></script>
+
+</article>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
