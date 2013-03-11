@@ -27,6 +27,9 @@
 	
 	<!-- Required Modernizr file -->
 	<script src="libraries/imakewebthings-deck.js-e42bd0c/modernizr.custom.js"></script>
+    <style type="text/css">
+        .slide dd {margin-bottom: 20px;}
+    </style>
 </head>
 <body>
 
@@ -50,7 +53,7 @@
         <li>Uses Replicas for High Availability of the Data</li>
         <li>A Java web application and service layer.</li>
     </ul>
-    <p>A webservice for storing data safely and retrieving data quickly.</p>
+    <p>A webservice for <span style="font-size: larger">storing data safely</span> and <span style="font-size: larger">retrieving data quickly.</span></p>
 </section>
 
 <section class="slide" id="activity">
@@ -105,7 +108,7 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
 
 <section class="slide" id="for_your_life2">
     <h2>Elasticsearch Your Life</h2>
-    <pre>
+    <pre id="tweets_query">
         {
             "query" : {
                 "match_all": {}
@@ -122,27 +125,31 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
                 }
             }
         }
-    </pre>
+    <!-- </pre><button id="tweets_query_run">Run Query</button>
+    <pre id="tweets_result"></pre> -->
+
     <!-- TODO: result or go to es-head for the query at this point. -->
 </section>
 
 <section class="slide" id="shardloads_of_bs">
     <h2>I haven't been entirely forthcoming...</h2>
-    <p>Elasticsearch doesn't have authentication or security.</p>
-    <p>The data is not realtime.</p>
-    <p>JavaScript is asynchronous and doesn't support streaming responses.</p>
+    <h3>Elasticsearch doesn't have authentication or security.</h3>
+    <h3>Queries don't give you a real-time snapshot of your data.</h3>
 </section>
 
 
 <section class="slide" id="links">
+    <h2>Links</h2>
     <dl>
         <dt><a href="http://www.elasticsearch.org/">http://www.elasticsearch.org/</a></dt><dd>Download and Documentation</dd>
         <dt><a href="https://github.com/AdaTheDev/ElasticTweets">https://github.com/AdaTheDev/ElasticTweets</a></dt><dd>ElasticTweets, upload tweets to elasticsearch. I got it to compile with Mono in OS X</dd>
+        <dt><a href="http://addyosmani.github.com/todomvc/">http://addyosmani.github.com/todomvc/</a></dt><dd>TodoMVC</dd>
         <dt>Data Visualization with ElasticSearch and Protovis</dt><dd>On the elasticsearch blog.</dd>
     </dl>
 </section>
 
 <section class="slide" id="my_todos">
+    <h2>My elasticsearch Todo List</h2>
     <ul>
         <li>Open-source my elasticsearch ORM for Backbone Sync</li>
         <li>Open-source this slide deck</li>
@@ -201,5 +208,23 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
 		$.deck('.slide');
 	});
 </script>
+
+
+<!--
+<script>
+    $(function () {
+        $("#tweets_result").hide();
+        $('#tweets_query_run').click(function() {
+            var query = $('#tweets_query').text();
+            $.getJSON("http://devdatasearch.blacklocus.com:9200/tweets/_search", query, function(data) {
+                $('#tweets_result').text(JSON.stringify(data)).toggle();
+                $("#tweets_query").toggle();
+                $("#tweets_result").toggle();
+            });
+        });
+    });
+</script>
+
+-->
 </body>
 </html>

@@ -427,7 +427,7 @@
         model.trigger('destroy', model, model.collection, options);
       };
 
-        console.log("Is this new? " + model.isNew());
+
 
       options.success = function(resp) {
         if (options.wait || model.isNew()) destroy();
