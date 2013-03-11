@@ -427,6 +427,8 @@
         model.trigger('destroy', model, model.collection, options);
       };
 
+        console.log("Is this new? " + model.isNew());
+
       options.success = function(resp) {
         if (options.wait || model.isNew()) destroy();
         if (success) success(model, resp, options);
@@ -1437,6 +1439,11 @@
       params.data = JSON.stringify(options.attrs || model.toJSON(options));
     }
 
+    if (model && (method === 'read') && model.id == undefined) {
+        params.url += "/_search";
+        params.data = '{"query" : {"match_all" : {}}}';
+    }
+
     // For older servers, emulate JSON by encoding the request into an HTML-form.
     if (options.emulateJSON) {
       params.contentType = 'application/x-www-form-urlencoded';
@@ -1462,8 +1469,26 @@
 
     var success = options.success;
     options.success = function(resp, status, xhr) {
-      if (success) success(resp, status, xhr);
-      model.trigger('sync', model, resp, options);
+      if (resp._id != null) {
+          var new_model = model.toJSON(options);
+          new_model.id = resp._id;
+          var realized_response = new_model;
+      }
+      var found_docs = [];
+      if(resp != null && resp.hits != null && resp.hits.hits != null && resp.hits.hits.length > 0){
+        for(var i=0; i <= resp.hits.hits.length; i++){
+            var hit = resp.hits.hits[i];
+            if(hit){
+              var found_doc = hit._source;
+              found_doc.id = hit._id;
+              found_docs.push(found_doc);
+            }
+        }
+        var realized_response = found_docs;
+          console.log(found_docs);
+      }
+      if (success) success(realized_response, status, xhr);
+      model.trigger('sync', model, realized_response, options);
     };
 
     var error = options.error;
