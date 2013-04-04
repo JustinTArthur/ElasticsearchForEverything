@@ -16,7 +16,7 @@ var app = app || {};
 		// Save all of the todo items under the `"todos"` namespace.
 		// localStorage: new Store('todos-backbone'),
 
-        url: 'http://devdatasearch.blacklocus.com:9200/justin_todomvc/todos',
+        url: 'http://127.0.0.1:9200/todomvc/todos',
 
 		// Filter down the list of all todo items that are finished.
 		completed: function() {
