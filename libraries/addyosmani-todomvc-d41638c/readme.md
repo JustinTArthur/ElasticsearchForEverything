@@ -1,5 +1,8 @@
 # ![TodoMVC](https://raw.github.com/addyosmani/todomvc/gh-pages/media/logo.png)
 
+## This is a modified version of TodoMVC at d41638c for the "Elasticsearch for Everything" slide deck
+https://github.com/JustinTArthur/ElasticsearchForEverything
+
 ## Helping you select an MV\* framework
 
 
