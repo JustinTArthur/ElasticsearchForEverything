@@ -5,14 +5,15 @@ See the video: http://vimeo.com/blacklocus/dev-and-data-2013-elasticsearch-for-e
 
 ## To use
 1.  Set up an elasticsearch cluster. For best visual effect, consider one consisting of more than one node.
-2.  Install elasticsearch-head plugin on the node you plan to use as the endpoint.
-    Alternatively, just have elasticsearch-head locally, and connect it to an endpoint on the cluster.
+2.  Install the [elasticsearch-head plugin](http://mobz.github.com/elasticsearch-head/) on a node in the cluster.
+    Alternatively, just have elasticsearch-head locally, and connect it to a node on the cluster.
 3.  Adjust `libraries/addyosmani-todomvc-d41638c/architecture-examples/backbone/js/collections/todos.js` to point the
-    `TodoList` `url` to the HTTP endpoint of a node in your elasticsearch cluster if other than http://127.0.0.1:9200...
+    `TodoList` `url` to an HTTP endpoint of a node in your elasticsearch cluster if other than http://127.0.0.1:9200...
 4.  Set up an index for Twitter tweets. You'll want to make sure the `created_at` date format is set to Twitter's
     format. See [this wiki page](https://github.com/JustinTArthur/ElasticsearchForEverything/wiki/Tweets-Schema) for the
-    schema I used. You can PUT just the `created_at` mapping if you want.
-5.  Load a Twitter archive into an elasticsearch index. I used
+    schema I used. You can PUT just the `created_at` mapping if you want; auto-mapping does fine for the other
+    fields.
+5.  Load a Twitter archive into that elasticsearch index. I used
     [ElasticTweets](https://github.com/AdaTheDev/ElasticTweets) to load my downloaded Twitter archive.
 6.  Open deck.html in a modern web browser. Consider opening developer browser tooling that can demonstrate HTTP
     connections for technical audiences.
