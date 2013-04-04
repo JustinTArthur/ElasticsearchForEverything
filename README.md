@@ -14,7 +14,8 @@ See the video: http://vimeo.com/blacklocus/dev-and-data-2013-elasticsearch-for-e
     schema I used. You can PUT just the `created_at` mapping if you want.
 5.  Load a Twitter archive into an elasticsearch index. I used
     [ElasticTweets](https://github.com/AdaTheDev/ElasticTweets) to load my downloaded Twitter archive.
-6.  Open deck.html in a modern web browser.
+6.  Open deck.html in a modern web browser. Consider opening developer browser tooling that can demonstrate HTTP
+    connections for technical audiences.
 
 ## License
 The contents of this slide deck, with the exception of included 3rd-party libraries, is licensed as Creative Commons
