@@ -43,6 +43,7 @@
         <dt>Justin T. Arthur</dt>
         <dd>Senior Software Engineer</dd>
     </dl>
+    <img src="graphics/BlackLocus_logo_h.png" style="width: 25%; text-align: left;"/>
 </section>
 
 <section class="slide" id="elasticsearch">
@@ -64,7 +65,7 @@
 
 <section class="slide" id="what-its-made-for">
 	<h2>What It's Made For</h2>
-    <p>Search. Near-realtime querying of indexed data. Also, analysis.</p>
+    <h3>Search. Near-realtime querying of indexed data. Also, analysis.</h3>
 </section>
 
 <section class="slide" id="as_a_db">
@@ -104,6 +105,7 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
     <h2>Elasticsearch Your Life</h2>
     <h3>I'm not a web developer, what can elasticsearch do to improve my life?</h3>
     <p>I downloaded my tweet archive from twitter.com and used Adrian Hills' ElasticTweets app to import them into elasticsearch.</p>
+    <img src="graphics/elastictweets.png"/>
 </section>
 
 <section class="slide" id="for_your_life2">
@@ -125,7 +127,8 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
                 }
             }
         }
-    <!-- </pre><button id="tweets_query_run">Run Query</button>
+    </pre>
+    <!-- <button id="tweets_query_run">Run Query</button>
     <pre id="tweets_result"></pre> -->
 
     <!-- TODO: result or go to es-head for the query at this point. -->
@@ -134,7 +137,8 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
 <section class="slide" id="shardloads_of_bs">
     <h2>I haven't been entirely forthcoming...</h2>
     <h3>Elasticsearch doesn't have authentication or security.</h3>
-    <h3>Queries don't give you a real-time snapshot of your data.</h3>
+    <h3>Search queries don't give you real-time access to your data.</h3>
+    <h3>Relational data... meh</h3>
 </section>
 
 
@@ -144,6 +148,7 @@ PUT http://devdatasearch.blacklocus.com:9200/tweets/tweets/_mapping
         <dt><a href="http://www.elasticsearch.org/">http://www.elasticsearch.org/</a></dt><dd>Download and Documentation</dd>
         <dt><a href="https://github.com/AdaTheDev/ElasticTweets">https://github.com/AdaTheDev/ElasticTweets</a></dt><dd>ElasticTweets, upload tweets to elasticsearch. I got it to compile with Mono in OS X</dd>
         <dt><a href="http://addyosmani.github.com/todomvc/">http://addyosmani.github.com/todomvc/</a></dt><dd>TodoMVC</dd>
+        <dt><a href="http://mobz.github.com/elasticsearch-head/">http://mobz.github.com/elasticsearch-head/</a></dt><dd>elasticsearch-head</dd>
         <dt><a href="http://www.elasticsearch.org/2011/05/13/data-visualization-with-elasticsearch-and-protovis/">Data Visualization with ElasticSearch and Protovis</a></dt><dd>On the elasticsearch blog.</dd>
     </dl>
 </section>
